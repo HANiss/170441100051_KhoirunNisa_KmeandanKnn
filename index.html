@@ -1,0 +1,928 @@
+
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+        <meta name="description" content="A Material Design theme for MkDocs">
+      
+      
+        <link rel="canonical" href="https://squidfunk.github.io/mkdocs-material/">
+      
+      
+        <meta name="author" content="Martin Donath">
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.2.0">
+    
+    
+      
+        <title>Material for MkDocs</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/application.750b69bd.css">
+      
+        <link rel="stylesheet" href="assets/stylesheets/application-palette.224b79ff.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#3f51b5">
+      
+    
+    
+      <script src="assets/javascripts/modernizr.74668098.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="assets/fonts/material-icons.css">
+    
+    
+    
+      
+        
+<script>
+  window.ga = window.ga || function() {
+    (ga.q = ga.q || []).push(arguments)
+  }
+  ga.l = +new Date
+  /* Setup integration and send page view */
+  ga("create", "None", "auto")
+  ga("set", "anonymizeIp", true)
+  ga("send", "pageview")
+  /* Register handler to log search on blur */
+  document.addEventListener("DOMContentLoaded", () => {
+    if (document.forms.search) {
+      var query = document.forms.search.query
+      query.addEventListener("blur", function() {
+        if (this.value) {
+          var path = document.location.pathname;
+          ga("send", "pageview", path + "?q=" + this.value)
+        }
+      })
+    }
+  })
+</script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
+      
+    
+    
+  </head>
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448"
+    viewBox="0 0 416 448" id="__github">
+  <path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19-18.125
+        8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19 18.125-8.5
+        18.125 8.5 10.75 19 3.125 20.5zM320 304q0 10-3.125 20.5t-10.75
+        19-18.125 8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19
+        18.125-8.5 18.125 8.5 10.75 19 3.125 20.5zM360
+        304q0-30-17.25-51t-46.75-21q-10.25 0-48.75 5.25-17.75 2.75-39.25
+        2.75t-39.25-2.75q-38-5.25-48.75-5.25-29.5 0-46.75 21t-17.25 51q0 22 8
+        38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0
+        37.25-1.75t35-7.375 30.5-15 20.25-25.75 8-38.375zM416 260q0 51.75-15.25
+        82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5-41.75
+        1.125q-19.5 0-35.5-0.75t-36.875-3.125-38.125-7.5-34.25-12.875-30.25-20.25-21.5-28.75q-15.5-30.75-15.5-82.75
+        0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25
+        30.875q36.75-8.75 77.25-8.75 37 0 70 8 26.25-20.5
+        46.75-30.25t47.25-9.75q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34
+        99.5z" />
+</svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#k-means-vs-k-nn" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="https://squidfunk.github.io/mkdocs-material/" title="Material for MkDocs" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon"></i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            <span class="md-header-nav__topic">
+              Material for MkDocs
+            </span>
+            <span class="md-header-nav__topic">
+              Material
+            </span>
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+          
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+<a href="https://github.com/squidfunk/mkdocs-material" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    squidfunk/mkdocs-material
+  </div>
+</a>
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+        
+
+<nav class="md-tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  <li class="md-tabs__item">
+    
+      <a href="." title="Material" class="md-tabs__link md-tabs__link--active">
+        Material
+      </a>
+    
+  </li>
+
+      
+        
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="extensions/admonition/" title="Extensions" class="md-tabs__link">
+          Extensions
+        </a>
+      
+    </li>
+  
+
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </ul>
+  </div>
+</nav>
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="https://squidfunk.github.io/mkdocs-material/" title="Material for MkDocs" class="md-nav__button md-logo">
+      
+        <i class="md-icon"></i>
+      
+    </a>
+    Material for MkDocs
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+<a href="https://github.com/squidfunk/mkdocs-material" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    squidfunk/mkdocs-material
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Material
+      </label>
+    
+    <a href="." title="Material" class="md-nav__link md-nav__link--active">
+      Material
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#k-means-vs-k-nn" title="K-Means VS K-Nn" class="md-nav__link">
+    K-Means VS K-Nn
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#karakteristik-k-means" title="Karakteristik K-Means" class="md-nav__link">
+    Karakteristik K-Means
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#k-nn" title="K-Nn" class="md-nav__link">
+    K-Nn
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kelebihan-dan-kekurangan-k-nn" title="kelebihan dan kekurangan K-Nn" class="md-nav__link">
+    kelebihan dan kekurangan K-Nn
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="getting-started/" title="Getting started" class="md-nav__link">
+      Getting started
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      Extensions
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        Extensions
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="extensions/admonition/" title="Admonition" class="md-nav__link">
+      Admonition
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="extensions/codehilite/" title="CodeHilite" class="md-nav__link">
+      CodeHilite
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="extensions/footnotes/" title="Footnotes" class="md-nav__link">
+      Footnotes
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="extensions/metadata/" title="Metadata" class="md-nav__link">
+      Metadata
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="extensions/permalinks/" title="Permalinks" class="md-nav__link">
+      Permalinks
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="extensions/pymdown/" title="PyMdown" class="md-nav__link">
+      PyMdown
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="specimen/" title="Specimen" class="md-nav__link">
+      Specimen
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="customization/" title="Customization" class="md-nav__link">
+      Customization
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="compliance/" title="Compliance with GDPR" class="md-nav__link">
+      Compliance with GDPR
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="release-notes/" title="Release notes" class="md-nav__link">
+      Release notes
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="authors-notes/" title="Author's notes" class="md-nav__link">
+      Author's notes
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="contributing/" title="Contributing" class="md-nav__link">
+      Contributing
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="license/" title="License" class="md-nav__link">
+      License
+    </a>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#k-means-vs-k-nn" title="K-Means VS K-Nn" class="md-nav__link">
+    K-Means VS K-Nn
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#karakteristik-k-means" title="Karakteristik K-Means" class="md-nav__link">
+    Karakteristik K-Means
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#k-nn" title="K-Nn" class="md-nav__link">
+    K-Nn
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kelebihan-dan-kekurangan-k-nn" title="kelebihan dan kekurangan K-Nn" class="md-nav__link">
+    kelebihan dan kekurangan K-Nn
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  <h1>Material</h1>
+                
+                <h2 id="k-means-vs-k-nn">K-Means VS K-Nn<a class="headerlink" href="#k-means-vs-k-nn" title="Permanent link">&para;</a></h2>
+<p>di tulisan pertama saya ini, saya akan membahas tentang K-Means dan K-Nn.</p>
+<p>saya mulai pembahasan dari K-Means, apa sih K-Means itu?</p>
+<p>​   <strong>K-Means Clustering</strong> adalah suatu metode penganalisaan data atau metode Data Mining yang melakukan proses pemodelan tanpa supervisi (unsupervised) dan merupakan salah satu metode yang melakukan pengelompokan data dengan sistem partisi.</p>
+<p><img alt="" src="D:\SEM4\data mining\mkdocs-material-master\mkdocs-material-master\docs\assets\images\clust.jpg" /></p>
+<h4 id="karakteristik-k-means"><strong>Karakteristik K-Means</strong><a class="headerlink" href="#karakteristik-k-means" title="Permanent link">&para;</a></h4>
+<ol>
+<li>K-Means sangat cepat dalam proses clustering</li>
+<li>K-Means sangat sensitif pada pembangkitan centroid awal secara random</li>
+<li>Memungkinkan suatu cluster tidak mempunyai anggota</li>
+<li>Hasil clustering dengan K-Means bersifat tidak unik (selalu berubah-ubah) – terkadang baik, terkadang jelek</li>
+<li>K-means sangat sulit untuk mencapai global optimum </li>
+</ol>
+<p>Memperhatikan input dalam algoritma K-Means, dapat dikatakan bahwa algoritma ini hanya mengolah data kuantitatif atau numerik.
+Sebuah basis data tidak mungkin hanya berisi satu macam tipe data saja, akan tetapi beragam tipe.
+Sebuah basis data dapat berisi data-data dengan tipe sebagai berikut: binary, nominal, ordinal, interval dan ratio.
+Berbagai macam atribut dalam basis data yang berbeda tipe disebut sebagai data multivariate.
+Tipe data seperti nominal dan ordinal harus diolah terlebih dahulu menjadi data numerik (bisa dilakukan dengan cara diskritisasi), sehingga dapat diberlakukan algoritma K-Means dalam pembentukan clusternya.</p>
+<p>Data clustering menggunakan metode <strong>K-Means Clustering</strong> ini secara umum dilakukan dengan algoritma dasar sebagai berikut:</p>
+<ol>
+<li>
+<p>Tentukan jumlah cluster</p>
+</li>
+<li>
+<p>Alokasikan data ke dalam cluster secara random</p>
+</li>
+<li>
+<p>Hitung centroid/rata-rata dari data yang ada di masing-masing cluster</p>
+</li>
+<li>
+<p>Alokasikan masing-masing data ke centroid/rata-rata terdekat</p>
+</li>
+<li>
+<p>Kembali ke Step 3, apabila masih ada data yang berpindah cluster atau apabila perubahan nilai centroid, ada yang di atas nilai threshold yang ditentukan atau apabila perubahan nilai pada objective function yang digunakan di atas nilai threshold yang ditentukan!</p>
+</li>
+</ol>
+<p><img alt="" src="D:\SEM4\data mining\mkdocs-material-master\mkdocs-material-master\docs\assets\images\kmeans.jpg" /></p>
+<p><strong>Tahap-tahapan menghitung K-Mean</strong></p>
+<ol>
+<li>
+<p>menentukan secara acak <strong>K</strong> sebagai pusat cluster(centroid)</p>
+</li>
+<li>
+<p>menghitung jarak antar data ke masing-masing centroid(pusat cluster)</p>
+</li>
+<li>
+<p>mengelompokkan setiap data ke dalam cluster tertentu berdasarkan jarak terdekat.</p>
+</li>
+<li>
+<p>menghitung kembali jarak antar data ke masing-masing centroid baru.</p>
+</li>
+<li>
+<p>mengelompokkan kembali setiap data ke cluster tertentu.</p>
+</li>
+</ol>
+<p>Nb : bila anggota setiap cluster tidak berpindah tempat,maka data tersebut sudah tepat pengelompokannya, bila masih berpindah maka ulangi langkah 2 sampai seterusnya</p>
+<p>contoh perhitungan K Mean pada data berikut :</p>
+<p><img alt="" src="D:\SEM4\data mining\mkdocs-material-master\mkdocs-material-master\docs\assets\images\Screenshot_1.jpg" /></p>
+<p>Koefisien silhouette digunakan untuk membandingkan efektifitas masing-masing algoritma klastering.</p>
+<p>cara penghitungan dengan koefisien silhooutte :</p>
+<ol>
+<li>menentukan anggota cluster</li>
+<li>Menghitung nilai silhoutte setiap cluster( untuk menghitung nilai koefisien silhoute mencari nilai rata-rata dari setiap objek)</li>
+</ol>
+<p>rumus silhoutte : s(i)= 1-(a(i)/b(i))</p>
+<p>a(i) = Jarak objek dengan cluster yang sama</p>
+<p>b(i) = nilai minimum dari rata-rata jarak objek</p>
+<p>Nilai hasil silhouette coefficient terletak pada kisaran nilai -1 hingga 1. Semakin nilai silhouette coefficient mendekati nilai 1, maka semakin baik pengelompokan data dalam satu cluster. Sebaliknya jika silhouette coefficient mendekati nilai -1, maka semakin buruk pengelompokan data didalam satu cluster.</p>
+<h2 id="k-nn">K-Nn<a class="headerlink" href="#k-nn" title="Permanent link">&para;</a></h2>
+<p>selanjutnyaa, kita bahas tentang K-Nn, apa lagi sih itu K-Nn??</p>
+<p>K-Nn merupakan singkatan dari K-nearest neighbors, artinya adalah algoritma yang berfungsi untuk melakukan klasifikasi suatu data berdasarkan data pembelajaran (<em>train data sets</em>), yang diambil dari k tetangga terdekatnya (<em>nearest neighbors</em>), k tersebut merupakan mayoritas dari kategori <strong>k</strong>-tetangga terdekat.</p>
+<p><img alt="" src="D:\SEM4\data mining\mkdocs-material-master\mkdocs-material-master\docs\assets\images\knn.jpg" /></p>
+<p><strong>Cara Kerja Algoritma K-Nearest Neighbors (KNN)</strong></p>
+<p>​   K-nearest neighbors ini melakukan klasifikasi dengan proyeksi data pembelajaran pada ruang berdimensi banyak. Ruang ini dibagi menjadi bagian-bagian yang merepresentasikan kriteria data pembelajaran. Setiap data pembelajaran ini direpresentasikan menjadi titik-titik <strong>c</strong> pada ruang dimensi banyak.</p>
+<p><strong>Apa ituu Klasifikasi Terdekat??? (Nearest Neighbor Classification)</strong></p>
+<p>klasifikasi terdekat bisa saja disebut dengan <strong>Data baru</strong> atau data yang diklasifikasi, selanjutnya diproyeksikan pada ruang dimensi banyak yang telah memuat titik-titik c data pembelajaran. Proses klasifikasi dilakukan dengan mencari titik <strong>c</strong> terdekat dari <strong>c-baru</strong> (<em>nearest neighbor</em>)<em>.</em> Teknik pencarian tetangga terdekat yang umum dilakukan dengan menggunakan formula jarak atau disebut jugs euclidean*.*</p>
+<p><strong>Berikut beberapa formula yang digunakan dalam algoritma knn.</strong></p>
+<ul>
+<li><strong>Euclidean Distance</strong></li>
+</ul>
+<p>Jarak Euclidean adalah formula untuk mencari jarak antara 2 titik dalam ruang dua dimensi.</p>
+<p><a href="https://www.advernesia.com/wp-content/uploads/2018/05/euclidean.png"><img alt="euclidean" src="file:///C:\Users\AsusPc\AppData\Local\Temp\msohtmlclip1\01\clip_image002.gif" /></a></p>
+<ul>
+<li><strong>Hamming Distance</strong></li>
+</ul>
+<p>Jarak Hamming adalah cara mencari jarak antar 2 titik yang dihitung dengan panjang vektor biner yang dibentuk oleh dua titik tersebut dalam block kode biner.</p>
+<ul>
+<li><strong>Manhattan Distance</strong></li>
+</ul>
+<p>Manhattan Distance atau Taxicab Geometri adalah formula untuk mencari jarak <strong>d</strong> antar 2 vektor <strong>p,q</strong> pada ruang dimensi <strong>n*</strong>.*</p>
+<ul>
+<li><strong>Minkowski Distance</strong></li>
+</ul>
+<p>Minkowski distance adalah formula pengukuran antar 2 titik pada ruang vektor normal yang merupakan hibridisasi yang mengeneralisasi euclidean distance dan mahattan distance.</p>
+<p>Berikut adalah tahapan-tahapan perhitungan Algoritmat K-Nn</p>
+<ol>
+<li>
+<p>Menentukan parameter <strong>k</strong> (jumlah tetangga paling dekat).</p>
+</li>
+<li>
+<p>Menghitung kuadrat jarak eucliden objek terhadap data training yang diberikan.</p>
+</li>
+<li>
+<p>Mengurutkan hasil no 2 secara <em>ascending</em> (berurutan dari nilai tinggi ke rendah)</p>
+</li>
+<li>
+<p>Mengumpulkan kategori <strong>Y</strong> (Klasifikasi nearest neighbor berdasarkan nilai <strong>k</strong>)</p>
+</li>
+<li>
+<p>Dengan menggunakan kategori nearest neighbor yang paling mayoritas maka dapat dipredisikan kategori objek.</p>
+</li>
+</ol>
+<p>Contoh Kasus :</p>
+<p>saya akan memberi salah satu contoh Menghitung K-Nn dengan menggunakan data Bunga Iris yang menggunakan bahasa Python, ini adalah rangkaian tugas dari matakuliah Datamining, oke langsung aja ini adalah scriptnya..</p>
+<pre class="codehilite"><code class="language-python">from sklearn import datasets
+import pandas as pd
+
+from sklearn.linear_model import 
+logistic_regression_path
+
+iris=datasets.load_iris()
+
+print(iris.data)
+print(iris.target)
+
+from sklearn.model_selection import train_test_split
+x_train, x_test, y_train, y_test=train_test_split(iris.data,iris.target,test_size=0.33)
+
+from sklearn.neighbors import KNeighborsClassifier
+clf=KNeighborsClassifier(n_neighbors=3).fit(x_train,y_train)
+
+from sklearn.metrics import accuracy_score
+print("accuracy is ")
+print(accuracy_score(y_test,clf.predict(x_test)))
+
+import matplotlib.pyplot as plt
+
+accuracy_values=[]
+
+for x in range(1,x_train.shape[0]):
+    clf=KNeighborsClassifier(n_neighbors=x).fit(x_train,y_train)
+    accuracy=accuracy_score(y_test,clf.predict(x_test))
+    accuracy_values.append([x,accuracy])
+    pass
+
+import numpy as np
+accuracy_values=np.array(accuracy_values)
+
+plt.plot(accuracy_values[:,0],accuracy_values[:,1])
+plt.xlabel("K")
+plt.ylabel("accuracy")
+plt.show()</code></pre>
+
+<p>Accuracy data</p>
+<pre class="codehilite"><code class="language-python">python
+plt.plot(accuracy_values[:,0],accuracy_values[:,1] plt.xlabel("K") plt.ylabel("accuracy")plt.show()</code></pre>
+
+<p><img alt="" src="D:\SEM4\data mining\mkdocs-material-master\mkdocs-material-master\docs\assets\images\akurasi data.jpg" /></p>
+<h2 id="kelebihan-dan-kekurangan-k-nn">kelebihan dan kekurangan K-Nn<a class="headerlink" href="#kelebihan-dan-kekurangan-k-nn" title="Permanent link">&para;</a></h2>
+<p>​       kelebihan :</p>
+<ul>
+<li>Sangat nonlinear.</li>
+</ul>
+<p>kNN merupakan salah satu algoritma (model) pembelajaran mesin yang bersifat nonparametrik. </p>
+<ul>
+<li>Mudah dipahami dan di implementasikan.</li>
+</ul>
+<p>kekurangan :</p>
+<ul>
+<li>
+<p>Perlu menunjukkan parameter K (jumlah tetangga terdekat)</p>
+</li>
+<li>
+<p>Tidak menangani nilai hilang (missing value) secara implisit.</p>
+</li>
+</ul>
+<p>​ Jika terdapat nilai hilang pada satu atau lebih variabel dari suatu instance, perhitungan jarak instance tersebut dengan instance lainnya menjadi tidak terdefinisi. Bagaimana coba, menghitung jarak dalam ruang 3-dimensi jika salah satu dimensi hilang? Karenanya, sebelum menerapkan kNN kerap dilakukan <strong>imputasi</strong> untuk mengisi nilai-nilai hilang yang ada pada dataset. Contoh teknik imputasi yang paling umum adalah mengisi nilai hilang pada suatu variabel dengan nilai rata-rata variabel tersebut (mean imputation).</p>
+<ul>
+<li>Sensitif terhadap data pencilan (outlier).</li>
+</ul>
+<p>Seperti yang telah dijelaskan Ali pada artikel sebelumnya, kNN bisa jadi sangat fleksibel jika <strong>k</strong> kecil.</p>
+<ul>
+<li>
+<p>Rentan terhadap variabel yang non-informatif.</p>
+</li>
+<li>
+<p>Rentan terhadap dimensionalitas yang tinggi.</p>
+</li>
+<li>
+<p>Rentan terhadap perbedaan rentang variabel.</p>
+</li>
+<li>
+<p>Nilai komputasi yang tinggi.</p>
+</li>
+</ul>
+<p>##### Referensi</p>
+<p><a href="https://id.wikipedia.org/wiki/KNN">https://id.wikipedia.org/wiki/KNN</a></p>
+<p>&lt;<a href="https://id.wikipedia.org/wiki/K-means">https://id.wikipedia.org/wiki/K-means</a></p>
+<p><a href="http://depandienda.it.student.pens.ac.id/file/knn_references.pdf">http://depandienda.it.student.pens.ac.id/file/knn_references.pdf</a></p>
+<p><a href="https://informatikalogi.com/algoritma-k-nn-k-nearest-neighbor/">https://informatikalogi.com/algoritma-k-nn-k-nearest-neighbor/</a></p>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+        
+          <a href="getting-started/" title="Getting started" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Getting started
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; 2016 - 2019 Martin Donath
+          </div>
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+  <div class="md-footer-social">
+    <link rel="stylesheet" href="assets/fonts/font-awesome.css">
+    
+      <a href="http://struct.cc" class="md-footer-social__link fa fa-globe"></a>
+    
+      <a href="https://github.com/squidfunk" class="md-footer-social__link fa fa-github-alt"></a>
+    
+      <a href="https://twitter.com/squidfunk" class="md-footer-social__link fa fa-twitter"></a>
+    
+      <a href="https://linkedin.com/in/squidfunk" class="md-footer-social__link fa fa-linkedin"></a>
+    
+  </div>
+
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="assets/javascripts/application.8c0d971c.js"></script>
+      
+      <script>app.initialize({version:"1.0.4",url:{base:"."}})</script>
+      
+    
+  </body>
+</html>
